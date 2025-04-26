@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Button,} from 'react-native';
-import styles from "src/screens/ProfileScreenStyles";
+import styles from "./ProfileScreenStyle";
 
 export default function ProfileScreen ({ navigation }) {
     return (
@@ -9,13 +9,13 @@ export default function ProfileScreen ({ navigation }) {
             <View style={styles.buttonContainer}>
                 <Button 
                     title="Go to Home"
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={() => navigation.navigate('HomeScreen')}
                 />
             </View>
             <View style={styles.buttonContainer}>
                 <Button 
                     title='Go to Details'
-                    onPress={() => navigation.navigate('Details')}
+                    onPress={() => navigation.navigate('DetailsScreen')}
                 />
             </View>
         </View>

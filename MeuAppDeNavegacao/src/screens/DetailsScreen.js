@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Button } from 'react-native';
-import styles from 'src/screens/DetailsScreenStyle';
+import styles from './DetailsScreenStyle.js';
 
 export default function DetailsScreen({ navigation }) {
     return (
@@ -9,13 +9,13 @@ export default function DetailsScreen({ navigation }) {
             <View style={styles.buttonContainer}>
                 <Button
                     title='Go to Home'
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={() => navigation.navigate('HomeScreen')}
                 />
             </View>
             <View style={styles.buttonContainer}>
                 <Button
                     title='Go to Profile'
-                    onPress={() => navigation.navigate('Profile')}
+                    onPress={() => navigation.navigate('ProfileScreen')}
                 />
             </View>
         </View>

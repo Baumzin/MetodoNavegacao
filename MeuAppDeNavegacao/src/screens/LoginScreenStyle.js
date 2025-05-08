@@ -19,14 +19,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#dda0dd', //cor de fundo do botão
         margin: 10,
         with: windowWidth * 0.5, //50% de largura da tela
-        borderRadius: 5
+        borderRadius: 10
     },
 
     input : {
         backgroundColor: '#eeeeee',
         margin: 10,
-        width: 200, //50% de largura da tela
-        borderRadius: 2
+        width: 300,
+        borderRadius: 10
     },
 });
 

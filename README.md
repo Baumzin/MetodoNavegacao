@@ -14,7 +14,7 @@ bash
 cd NomeDoDiretorio
 ```
 
-### 1. Tenha o Expo e o Npm instalados
+### 2. Tenha o Expo e o Npm instalados
 - Para isso você pode ir até seu terminal e digitar:
  ``` 
  bash
@@ -42,7 +42,7 @@ cd NomeDoDiretorio
  ```
  Se preferir, insira o ```-g``` após o ```expo-cli``` para instalar o expo no modo global, ou seja, que torne os comandos do expo executáveis onde você pode usar na linha de comando, independentemente do seu projeto atual.
 
- ### 2. Dê o start no seu projeto clonado!
+ ### 3. Dê o start no seu projeto clonado!
 
  Para isso, execute:
  ```

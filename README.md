@@ -53,5 +53,5 @@ cd NomeDoDiretorio
  o ```--tunnel``` é importante caso sua máquina que esteja rodando o projeto não esteja conectada na mesma internet, possibilitando assim você executar o projeto mesmo em redes diferentes
 
  ## Para acessar a tela de login:
- - Usuário: * admin *
- - Senha: * 1234 *
+ - Usuário: **admin**
+ - Senha: **1234**

@@ -18,6 +18,12 @@ export default function ProfileScreen ({ navigation }) {
                     onPress={() => navigation.navigate('DetailsScreen')}
                 />
             </View>
+            <View style={styles.buttonContainer}>
+                <Button
+                    title='Go Back'
+                    onPress={() => navigation.goBack()}
+                />
+            </View>
         </View>
     );
 }

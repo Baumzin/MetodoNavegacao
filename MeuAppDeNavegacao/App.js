@@ -13,8 +13,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="LoginScreen">
         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false}}/>
-        <Stack.Screen name="DetailsScreen" component={DetailsScreen}/>
-        <Stack.Screen name="ProfileScreen" component={ProfileScreen}/>
+        <Stack.Screen name="DetailsScreen" component={DetailsScreen} options={{ headerShown: false}}/>
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} options={{ headerShown: false}}/>
         <Stack.Screen name="LoginScreen" component={LoginScreen}/> 
       </Stack.Navigator>
     </NavigationContainer>

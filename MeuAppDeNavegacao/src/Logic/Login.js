@@ -1,50 +1,50 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function ValidarLogin(usuario, senha, navigation ){
-    const [login, setLogin] = useState("");
-    const [logins, setLogins] = useState("");
-  
-    //função para salvar os logins no AsyncStorage
-    const salvarLogins = async (loginsArray) => {
+export default function verificaLogin() {
+  //criando as chaves que irao verificar o esstado de login
+  const [estaLogado, setEstaLogado] = useState(false);
+  const [jaLogouAntes, setJaLogouAntes] = useState(false);
+
+  //criando a funçao que verifica se ja logou antes ou se esta logado
+  useEffect(() => {
+    const verificaLogin = async () => {
       try {
-        await AsyncStorage.setItem('logins', JSON.stringify(loginsArray));
-      } catch (error){
-        console.log("Erro ao efeutar o login: ", error);
+        const estaLogado = await AsyncStorage.getItem("estaLogado");
+        const jaLogouAntes = await AsyncStorage.getItem("jaLogouAntes");
+
+        setEstaLogado(estaLogado === "true")
+        setJaLogouAntes(jaLogouAntes === "true");
+
+      } catch (error) {
+        console.log("Erro ao verificar o login: ", error);
       }
     };
-  
-    //função para carregar tarefas ao iniciar o app
-    const carregarLogins = async () => {
-      try {
-        const loginsArmazenados = await AsyncStorage.getItem('logins');
-        if(loginsArmazenados !== null){
-          setTasks(JSON.parse(loginsArmazenados));
-        }
-      } catch(error) {
-        console.log("Erro ao carregar os logins: ", error);
-      }
+
+    verificaLogin();
+  }, []);
+
+  const login = async (usuario, senha) => {
+    if (usuario === "admin" && senha === "1234") {
+      setEstaLogado(true);
+      setJaLogouAntes(true);
+
+      await AsyncStorage.setItem("estaLogado", "true");
+      await AsyncStorage.setItem("jaLogouAntes", "true");
+
+      return true;
+
+    } else {
+      return false;
     }
-  
-    //função que adiciona um novo login
-    const adicionaLogin = () => {
-      if(task.trim() !== ""){
-        const novosLogins = [...logins, login];
-        setLogins(novosLogins);
-        salvarLogins(novosLogins); //salva a lista atualizada
-        setLogin(""); //limpa o campo de entrada
-      }
-    };
-  
-    //carrega os logins ao iniciar o aplicativo
-    useEffect(() => {
-      carregarLogins();
-    }, []);
-  
-    if(usuario == "admin" && senha == "1234"){
-        navigation.navigate('HomeScreen');
-        
-    }else{
-        alert("Senha ou Usuário Incorretos!");
-    }
+  }
+
+  const logout = async () => {
+    setEstaLogado(false);
+    await AsyncStorage.setItem("estaLogado", "false");
+  };
+
+  return {estaLogado, jaLogouAntes, login, logout};
+
+
 }

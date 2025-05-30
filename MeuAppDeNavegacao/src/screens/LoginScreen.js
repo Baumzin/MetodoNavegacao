@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, Button, TextInput,} from 'react-native';
 import { useState } from "react";
 import styles from './LoginScreenStyle.js';
-import ValidarLogin from "../Logic/Login";
+import verificaLogin from '../Logic/Login.js';
+
 
 export default function LoginScreen({ navigation }){
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
+    const { login, estaLogado, jaLogouAntes } = verificaLogin();
+
+    useEffect(() => {
+        if(estaLogado){
+            navigation.navigate('HomeScreen');
+        }
+    }, [estaLogado]);
+
+    const executaLogin = async () => {
+        const sucesso = await login(usuario, senha);
+
+        if(sucesso){
+            navigation.navigate('HomeScreen');
+        } else {
+            alert("Erro! Usuário ou senha incorretos");
+        }
+    };
+
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Login Screen</Text>
+            <Text style={styles.title}>{jaLogouAntes ? 'Login' : 'Primeiro Acesso'}</Text>
             <TextInput 
                 style={styles.input}
                 placeholder="Insira seu usuário"
@@ -27,7 +46,7 @@ export default function LoginScreen({ navigation }){
             <View style={styles.buttonContainer}>
                 <Button
                     title="Validate Login"
-                    onPress={() => ValidarLogin(usuario, senha, navigation)}
+                    onPress={ executaLogin() }
                 />
             </View>
         </View>

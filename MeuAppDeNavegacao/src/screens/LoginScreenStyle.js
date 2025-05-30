@@ -5,28 +5,42 @@ const windowWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#ffd0c6', //cor de fundo da tela
+        padding: 20,
+        backgroundColor: '#f5f5f5',
     },
-
-    title: {
-        fontSize: 24,
-        margimBottom: 20,
-    },
-
     buttonContainer: {
         backgroundColor: '#dda0dd', //cor de fundo do botão
         margin: 10,
         with: windowWidth * 0.5, //50% de largura da tela
         borderRadius: 10
     },
-
-    input : {
-        backgroundColor: '#eeeeee',
-        margin: 10,
-        width: 300,
-        borderRadius: 10
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginTop: 20,
+        marginBottom: 20,
+    },
+    input: {
+        height: 40,
+        borderColor: '#cccccc',
+        borderWidth: 1,
+        marginBottom: 10,
+        paddingHorizontal: 10,
+    },
+    loginContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingVertical: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
+    },
+    textoLogin: {
+        fontSize: 18,
+    },
+    deletarLogin: {
+        color: 'red',
+        fontWeight: 'bold',
     },
 });
 

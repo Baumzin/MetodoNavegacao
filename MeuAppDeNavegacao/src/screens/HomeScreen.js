@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Button, TouchableOpacity} from 'react-native';
 import styles from "./HomeScreenStyle";
 import verificaLogin from "../Logic/Login.js";
+import stylesLogin from "./LoginScreenStyle.js";
 
 export default function HomeScreen({ navigation }) {
     const { logout } = verificaLogin();
@@ -28,10 +29,10 @@ export default function HomeScreen({ navigation }) {
                 />
             </View>
             <TouchableOpacity
-                style={{ backgroundColor: '#FF3B30', padding: 15, borderRadius: 8, alignItems: 'center' }}
+                style={stylesLogin.btnLogout}
                 onPress={executaLogout}
             >
-                <Text style={{ color: 'white', fontSize: 16 }}>Sair</Text>
+                <Text style={stylesLogin.logout}>Sair</Text>
             </TouchableOpacity>
         </View>
     );

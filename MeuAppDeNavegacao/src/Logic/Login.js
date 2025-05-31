@@ -1,36 +1,36 @@
 import { useEffect, useState } from 'react';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function verificaLogin() {
-  //criando as chaves que irao verificar o esstado de login
+export default function confirmaLogin() {
+  //criando as chaves que irão confirmar o estado de login
   const [estaLogado, setEstaLogado] = useState(false);
-  const [jaLogouAntes, setJaLogouAntes] = useState(false);
 
-  //criando a funçao que verifica se ja logou antes ou se esta logado
+  //criando a função que confirma se já logou antes ou se está logado (useEffect indica listener de Evento)
   useEffect(() => {
-    const verificaLogin = async () => {
+    const confirmaLogin = async () => {
+      //a função confirmaLogin cria as variáveis "estaLogado" e "jaLogouAntes" que são falsos e transforma-os como true
       try {
         const estaLogado = await AsyncStorage.getItem("estaLogado");
-        const jaLogouAntes = await AsyncStorage.getItem("jaLogouAntes");
 
         setEstaLogado(estaLogado === "true")
-        setJaLogouAntes(jaLogouAntes === "true");
 
-      } catch (error) {
-        console.log("Erro ao verificar o login: ", error);
+
+      } catch (erro) {
+        console.log("Erro ao confirmar o login: ", erro);
       }
     };
 
-    verificaLogin();
+    confirmaLogin();
   }, []);
 
+  //Aqui, a função login tem os parâmetros usuario e senha vindos de LoginScreen para a verificação do login
   const login = async (usuario, senha) => {
     if (usuario === "admin" && senha === "1234") {
+      //se correto, seta ambos como true
       setEstaLogado(true);
-      setJaLogouAntes(true);
 
+      //pede para aguardar setar no asyncStorage como true
       await AsyncStorage.setItem("estaLogado", "true");
-      await AsyncStorage.setItem("jaLogouAntes", "true");
 
       return true;
 
@@ -40,11 +40,12 @@ export default function verificaLogin() {
   }
 
   const logout = async () => {
+    //se quiser sair, setará estaLogado como falso no AsyncStorage 
     setEstaLogado(false);
     await AsyncStorage.setItem("estaLogado", "false");
   };
 
-  return {estaLogado, jaLogouAntes, login, logout};
+  return {estaLogado, login, logout};
 
 
 }

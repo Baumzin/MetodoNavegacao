@@ -8,7 +8,7 @@ export default function confirmaLogin() {
   //criando a função que confirma se já logou antes ou se está logado (useEffect indica listener de Evento)
   useEffect(() => {
     const confirmaLogin = async () => {
-      //a função confirmaLogin cria as variáveis "estaLogado" e "jaLogouAntes" que são falsos e transforma-os como true
+      //a função confirmaLogin cria as variável "estaLogado" que é falsa e transforma ela como true
       try {
         const estaLogado = await AsyncStorage.getItem("estaLogado");
 
@@ -25,8 +25,8 @@ export default function confirmaLogin() {
 
   //Aqui, a função login tem os parâmetros usuario e senha vindos de LoginScreen para a verificação do login
   const login = async (usuario, senha) => {
-    if (usuario === "admin" && senha === "1234") {
-      //se correto, seta ambos como true
+    if (usuario === "Admin" && senha === "1234") {
+      //se correto, estaLogado vira true
       setEstaLogado(true);
 
       //pede para aguardar setar no asyncStorage como true

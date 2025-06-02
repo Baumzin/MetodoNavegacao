@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         backgroundColor: '#ffebcd', //cor de fundo do botão
         margin: 10,
-        with: windowWidth * 0.5, //50% de largura da tela
+        width: windowWidth * 0.5, //50% de largura da tela
         borderRadius: 5
     },
 });

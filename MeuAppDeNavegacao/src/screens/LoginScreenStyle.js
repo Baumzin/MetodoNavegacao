@@ -6,14 +6,14 @@ const stylesLogin = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: 'ff0000',
     },
     buttonContainer: {
-        backgroundColor: '#dda0dd', //cor de fundo do botão
         margin: 10,
+        backgroundColor: 'ff0000',
         width: windowWidth * 0.5, //50% de largura da tela
         alignSelf: 'center',
-        borderRadius: 10
+        borderRadius: 5,
     },
     title: {
         textAlign: 'center',
@@ -29,15 +29,13 @@ const stylesLogin = StyleSheet.create({
         marginBottom: 10,
         paddingHorizontal: 10,
     },
-    logout: {
-        color: 'white',
-        fontSize: 16,
-    },
+    
     btnLogout: {
-        backgroundColor: '#FF3B30', 
-        padding: 15, 
-        borderRadius: 8, 
-        alignItems: 'center'
+        
+        backgroundColor: 'ff0000', 
+        padding: 15,
+        borderRadius: 5, 
+        color: 'white',
     }
 });
 

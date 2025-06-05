@@ -1,21 +1,12 @@
-import React, { useEffect } from "react";
 import { View, Text, Button, TextInput,} from 'react-native';
 import { useState } from "react";
 import stylesLogin from './LoginScreenStyle.js';
 import verificaLogin from '../Logic/Login.js';
 
-
 export default function LoginScreen({ navigation }){
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
-    const { login, estaLogado } = verificaLogin();
-
-    useEffect(() => {
-        //se o listener ver q o estaLogado for true, libera a passagem para a HomeScreen
-        if(estaLogado){
-            navigation.navigate('HomeScreen');
-        }
-    }, [estaLogado]);
+    const { login } = verificaLogin();
 
     const executaLogin = async () => {
         //a variável successo aguarda o return da funçao login para ser definida
@@ -44,7 +35,7 @@ export default function LoginScreen({ navigation }){
                 placeholder="Insira sua senha"
                 secureTextEntry={true} //dessa forma, ainda permanece com o teclado padrão porém o que for digitado é ocultado por pontinhos pretos
                 value={senha}
-                onChangeText={text => setSenha(text)}
+                onChangeText={text => setSenha(text)} //atualiza constantemente a variável setSenha conforme o usuário for digitando
             />
             <View style={stylesLogin.buttonContainer}>
                 <Button

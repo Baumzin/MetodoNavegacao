@@ -1,12 +1,11 @@
-import React from "react";
-import { View, Text, Button, TouchableOpacity } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import styles from "./ProfileScreenStyle";
 import stylesLogin from "./LoginScreenStyle.js";
-import verificaLogin from "../Logic/Login.js";
+import confirmaLogin from "../Logic/Login.js";
 
 export default function ProfileScreen({ navigation }) {
 
-    const { logout } = verificaLogin();
+    const { logout } = confirmaLogin();
 
     const executaLogout = async () => {
         await logout();
@@ -37,7 +36,7 @@ export default function ProfileScreen({ navigation }) {
             </View>
             <View style={stylesLogin.buttonContainer}>
                 <Button
-                    title='Sair'
+                    title='Logout'
                     onPress={ executaLogout }
                     color={'red'}
                 />

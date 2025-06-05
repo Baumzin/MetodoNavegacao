@@ -1,6 +1,5 @@
-import { View, Text, Button, TouchableOpacity} from 'react-native';
+import { View, Text, Button } from 'react-native';
 import styles from "./HomeScreenStyle";
-import verificaLogin from "../Logic/Login.js";
 
 export default function HomeScreen({ navigation }) {
     return (

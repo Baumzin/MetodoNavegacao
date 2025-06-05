@@ -1,14 +1,22 @@
+import React, { useEffect } from "react";
 import { View, Text, Button, TextInput,} from 'react-native';
 import { useState } from "react";
 import stylesLogin from './LoginScreenStyle.js';
-import verificaLogin from '../Logic/Login.js';
+import confirmaLogin from '../Logic/Login.js';
 
 export default function LoginScreen({ navigation }){
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
-    const { login } = verificaLogin();
+    const { login, estaLogado } = confirmaLogin();
 
-    const executaLogin = async () => {
+    useEffect(() => {
+        //se o listener ver q o estaLogado for true, libera a passagem para a HomeScreen caso já esteja logado
+        if(estaLogado){
+            navigation.navigate('HomeScreen');
+        }
+    }, [estaLogado]);
+
+    const executaLogin = async () => {        
         //a variável successo aguarda o return da funçao login para ser definida
         const sucesso = await login(usuario, senha);
 

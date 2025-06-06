@@ -1,6 +1,6 @@
 # Projeto de introdução a troca de telas com React Native
 
-## Como baixar e clonar o projeto
+## Como ter o meu projeto em sua máquina
 
 ### 1. Clone meu repositório
 
@@ -18,7 +18,9 @@ bash
 cd NomeDoDiretorio
 ```
 
-### 2. Tenha o Expo e o Npm instalados
+## Verificando pacotes
+
+### 1. Tenha o Expo e o Npm instalados
 
 - Para isso você pode ir até seu terminal e digitar:
 
@@ -60,9 +62,9 @@ Após ter o node instalado, para baixar o npm digite em seu teriminal:
 
  Se preferir, insira o ```-g``` após o ```expo-cli``` para instalar o expo no modo global, ou seja, que torne os comandos do expo executáveis onde você pode usar na linha de comando, independentemente do seu projeto atual.
 
-### 3. Dê o start no seu projeto clonado
+## Execute o projeto clonado
 
- Para isso, execute:
+ Para isso, insira o comando:
  ```
  bash
 

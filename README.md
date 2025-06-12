@@ -6,7 +6,7 @@
 
 - Para isso, execute em seu terminal:
 
-```
+```bash
 bash
 
 git clone https://github.com/Baumzin/MetodoNavegacao
@@ -14,7 +14,7 @@ git clone https://github.com/Baumzin/MetodoNavegacao
 
 E após clonar, entre pelo terminal até o diretório do projeto, através do comando cd:
 
-```
+```bash
 bash
 
 cd NomeDoDiretorio
@@ -26,7 +26,7 @@ cd NomeDoDiretorio
 
 - Para isso você pode ir até seu terminal e digitar:
 
-```
+```bash
  bash
 
  npm -v
@@ -34,7 +34,7 @@ cd NomeDoDiretorio
 
  Caso não tenha o NPM instalado, pode haver a possibilidade de voce não ter o node.js instalado. Para conferir se ele já está instalado em sua máquina, realize o comando:
 
-```
+```bash
 bash
 
 node -v
@@ -44,7 +44,7 @@ Se ele mostrar sua versão, quer dizer que ele está instalado em sua máquina! 
 
 Após ter o node instalado, para baixar o npm digite em seu teriminal:
 
- ```
+ ```bash
  bash
 
  npm install
@@ -52,7 +52,7 @@ Após ter o node instalado, para baixar o npm digite em seu teriminal:
 
 - Para conferir se tem o expo instalado, digite:
 
- ```
+ ```bash
  bash
 
  expo --version
@@ -60,7 +60,7 @@ Após ter o node instalado, para baixar o npm digite em seu teriminal:
 
  Caso não tenha o Expo instalado, digite no terminal do seu repositório clonado:
 
- ```
+ ```bash
  bash
 
  npm install expo-cli
@@ -72,7 +72,7 @@ Após ter o node instalado, para baixar o npm digite em seu teriminal:
 
  Para isso, insira o comando:
 
- ```
+ ```bash
  bash
 
  npx expo start --tunnel
@@ -82,5 +82,5 @@ Após ter o node instalado, para baixar o npm digite em seu teriminal:
 
 ## Para acessar a tela de login
 
-- Usuário: **admin**
+- Usuário: **Admin**
 - Senha: **1234**
